@@ -586,12 +586,11 @@ hr{
   color: #4444;
   border: solid 1px #444;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
-  font-size: 24px;
+  width: 20%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
   margin-bottom: 10px;
-  background-color: #a3e7f1;
 }
 
 .contact-box p {
