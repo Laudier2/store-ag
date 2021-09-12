@@ -1,0 +1,431 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no, width=device-width">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>MODA E CIA</title>
+    <link rel="icon" type="image/jpg"
+        href="https://i.embed.ly/1/display/resize?key=fab0b4012302409abb914cfc88c62f73&url=https%3A%2F%2Fcdn.chec.io%2Fmerchants%2F27017%2Fimages%2Ficon%2Fe3248841ab9e534eaf664708f7f57a796427be1160db6d5cd6e4c%7Cloja.gif&width=300&grow=false" />
+    <meta name="description" content="" />
+    <link rel="publisher" href="https://chec.io" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GL-INFO - Spaces by Chec" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://spaces.trychec.com/27017" />
+    <meta property="og:site_name" content="Chec" />
+    <meta property="og:url" content="https://spaces.chec.io/27017" />
+    <link rel="canonical" href="index.html" />
+    <meta property="fb:app_id" content="417367831681015" />
+    <meta property="og:image"
+        content="https://cdn.chec.io/merchants/27017/images/cover/cf07ab5ded3a1dbda972415f0fd42b6bd86a117f60db705fe9b49|desktop-grub.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="GL-INFO - Spaces by Chec" />
+    <meta name="twitter:site" content="@trychec" />
+    <meta name="twitter:domain" content="Chec" />
+    <meta name="twitter:image"
+        content="https://cdn.chec.io/merchants/27017/images/cover/cf07ab5ded3a1dbda972415f0fd42b6bd86a117f60db705fe9b49|desktop-grub.png" />
+    <meta name="twitter:creator" content="@trychec" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,300italic" rel="stylesheet"
+        type="text/css">
+    <link href="css/checkout.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/flickity/flickity.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/App.css">
+    <script src="js/vendor.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+    <script type="text/javascript" src="https://cdn.chec.io/v2/commerce.js"></script>
+    <script type="text/javascript" src="js/spaces.js" defer></script>
+    <script type="text/javascript" src="js/jquery.hideseek.min.js" defer></script>
+    <script src="assets/flickity/flickity.pkgd.min.js" defer></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.7.2/jquery.serializejson.min.js"></script>
+    <script src="https://cdn.rawgit.com/mgalante/jquery.redirect/master/jquery.redirect.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.4.1/jquery.payment.min.js"></script>
+    <script src="https://www.paypalobjects.com/js/external/apdg.js"></script>
+</head>
+
+<body class="spaces ">
+    <div id="chec-basket" class="animated" onclick="cartShow()">
+        <span class="cart-icon">
+            <img src="images/cart.white.png" width="23">
+        </span>
+        <span class="items" data-chec="cart-items">0 Items</span>
+        <span class="subtotal" data-chec="cart-subtotal">$0.00</span>
+        <a class="view-cart mobile-only" href="javascript:cartShow()">Ver carrinho</a>
+    </div>
+
+    <section id="shopping-cart">
+        <aside id="cart-overview" class="inactive">
+          <hr class="hologram-bar open">
+          <div class="shopping-cart-wrap">
+            <a class="hide-cart mobile-only" href="javascript:cartHide()">Sair do  Carrinho</a>
+            <h3 class="shopping-cart-title"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Carrinho</h3>
+            <ul class="line-items">
+              <li class="empty">carrinho esta vazio!</li>
+            </ul>
+            <div class="subtotal">
+              <h4>Total</h4><span>-</span>
+            </div>
+            <div class="closing">
+              <a class="go-to-checkout" href="javascript:Spaces.goToCheckout()"><i
+                  class="fa fa-lock"></i><b>Confirma</b></a>
+              <small class="secure">Todas as transações são seguras e protegidas por criptografia SSL de 2048 bits.</small>
+            </div>
+          </div>
+          <div id="spaces-inline-checkout">
+          </div>
+          <hr class="hologram-bar close">
+        </aside>
+        <div id="cart-active-overlay" onclick="cartHide()"></div>
+      </section>
+
+    <nav class="navbar navbar-dark backgroud-nav">
+        <!-- Navbar content -->
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">
+                    <img src="https://i.embed.ly/1/display/resize?key=fab0b4012302409abb914cfc88c62f73&amp;url=https%3A%2F%2Fcdn.chec.io%2Fmerchants%2F27017%2Fimages%2Ficon%2Fe3248841ab9e534eaf664708f7f57a796427be1160db6d5cd6e4c%7Cloja.gif&amp;width=300&amp;grow=false"
+                        class="logo" width="150">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">
+                    <h1 class="h1">MODA E CIA</h1>
+                </a>
+            </li>
+        </ul>
+        <div id="chec-basket" class="animated" onclick="cartShow()">
+            <span class="cart-icon">
+                <img src="images/cart.white.png" width="23">
+            </span>
+            <span class="items" data-chec="cart-items">0 Items</span>
+            <span class="subtotal" data-chec="cart-subtotal">$0.00</span>
+            <a class="view-cart mobile-only" href="javascript:cartShow()">Ver Carrinho</a>
+        </div>
+    </nav>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100 img-slid"
+                    src="https://ph-cdn1.ecosweb.com.br/Web/posthaus/banner_JS/0_1_100190539_1_1600.jpg"
+                    alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 img-slid"
+                    src="https://zinzane.vteximg.com.br/arquivos/ids/419782/banners-preteleiras-feminino.png?v=637587750886900000"
+                    alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 img-slid"
+                    src="https://midia.fotos-riachuelo.com.br/fotos/megamenu/marketplace/junho2021/ADS-8580/Hero-MOB-Acess-ADS-8580.jpg"
+                    alt="Third slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 img-slid"
+                    src="https://midia.fotos-riachuelo.com.br/fotos/megamenu/feminino/julho2021/ADS-8891/hero-5-jeans-FEM-1a-jul-ADS-8891.jpg"
+                    alt="Third slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 img-slid"
+                    src="https://midia.fotos-riachuelo.com.br/fotos/megamenu/home/marco2021/ADS-8339/hero-basicos-ADS-8339.jpg"
+                    alt="Third slide">
+            </div>
+        </div>
+    </div>
+    <header>
+        <ul class="ul">
+            <li class="li"><p><a id="p1" href="/">Home</a></p></li>
+            <li class="li"><p class="p">Categorias</p>
+                <ul class="ul">
+                <li class="li"><a href="calca-masculina.html">Calça-Masculina</a></li>
+                <li class="li"><a href="calca-feminina.html">Calça-Feminina</a></li>
+                <li class="li"><a href="vestidos-tecido-mole.html">Vestidos-e-Saia</a></li>
+                <li class="li"><a href="camiseta-masculina.html">Camiseta-Masculina</a></li>
+                <li class="li"><a href="bermuda-diz.html">Bermuda-Diz</a></li>
+                <li class="li"><a href="diz-curto-f.html">Short-Feminino</a></li>
+                </ul>
+            </li>
+            <li class="li"><p class="p">Pedidos</p>
+                <ul class="ul">
+                <li class="li">
+                    <a href="https://www2.correios.com.br/sistemas/rastreamento/" target="_blank">Tem um pedido e ja tem o
+                    codigo acompanhe aqui</a>
+                </li>
+                </ul>
+            </li>
+            <li class="li"><p class="p">Reclamação</p>
+                <ul class="ul">
+                <li class="text-0">
+                    <b>Olá amigo tudo bem, seja bem vindo a MODA E CIA!</b> 
+                    
+                    <span>
+                    Caso tenha um problema ou uma reclamação, 
+                    entre em contato com nossa equipe, 
+                    nossos contatos estrão logo no fim da pagina.
+                    </span>
+                </li>
+                </ul>
+            </li>
+            <li class="li"><p class="p"><a href="politica-privacidade.html" target="_blank" class="a">Sobre Nos</a></p></li>
+        </ul>
+      </header>
+    <input id="search" name="search" style="margin-top:30px; border:1px solid rgba(108, 124, 144, 0.47);"
+    placeholder="Procure um produto aqui..." type="text" data-list="#products" autocomplete="off">
+    <br><br>
+    <section id="products" data-display-type="grid">
+
+    
+        <div class="product" data-product-name="Vestido Longo Tricot Regata Alça Madrinha"
+            data-product-id="prod_L1vOoZDPrPlRa8">
+            <div class="product-details-overlay">
+                <div class="product-contents">
+                    <div class="images ignore">
+                        <div class="hover-overlay">
+                            <a href="javascript:showProductDetailsModal('prod_L1vOoZDPrPlRa8')"
+                                class="learn-more">Ver Descrição</a>
+                            <a href="javascript:Spaces.AddToCart('prod_L1vOoZDPrPlRa8');" class="buy-now"><i
+                                    class="fa fa-lock" aria-hidden="true"></i> <b>Adiciona ao Carrinho</b></a>
+                        </div>
+
+                        <img src="https://cdn.chec.io/merchants/27017/assets/gpNMkx6XpizZ3ow4|vestido-.webp"
+                            class="product-image--main" onerror="this.style.display='none';">
+                        <div class="product-images">
+                            <img src="https://cdn.chec.io/merchants/27017/assets/gpNMkx6XpizZ3ow4|vestido-.webp"
+                                class="product-image carousel-cell" alt="" onerror="this.style.display='none';">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-name">Vestido Longo Tricot Regata Alça Madrinha <span
+                                class="inline-price">R$1.00</span></span>
+                        <span class="product-description">
+                            <h2>Descrição</h2>
+                            <p>Vestido Longo Várias Formas de Usar. Tecido: Malha Fria Tamanhos: P - 36/38 M - 40 G - 42
+                                Postagem em até três dias úteis após aprovação do pagamento Evite gastos com trocas,
+                                consulte as medidas antes da compra O custo da troca será por parte do comprador.</p>
+                        </span>
+                        <span class="product-price">R$1.00</span>
+
+
+                        <a href="javascript:hideProductDetailsModal()" class="close">Sair</a>
+                        <a href="javascript:Spaces.AddToCart('prod_L1vOoZDPrPlRa8');" class="buy-now"><i
+                                class="fa fa-lock" aria-hidden="true"></i> <b>Adiciona ao Carrinho</b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product" data-product-name="Saia Xadrez Com Fenda" data-product-id="prod_VPvL5z3jEMlAQk">
+            <div class="product-details-overlay">
+                <div class="product-contents">
+                    <div class="images ignore">
+                        <div class="hover-overlay">
+                            <a href="javascript:showProductDetailsModal('prod_VPvL5z3jEMlAQk')"
+                                class="learn-more">Ver Descrição</a>
+                            <a href="javascript:Spaces.AddToCart('prod_VPvL5z3jEMlAQk');" class="buy-now"><i
+                                    class="fa fa-lock" aria-hidden="true"></i> <b>Adiciona ao Carrinho</b></a>
+                        </div>
+
+                        <img src="https://cdn.chec.io/merchants/27017/assets/1q5YP2tFvTX58wNi|sai4.webp"
+                            class="product-image--main" onerror="this.style.display='none';">
+                        <div class="product-images">
+                            <img src="https://cdn.chec.io/merchants/27017/assets/1q5YP2tFvTX58wNi|sai4.webp"
+                                class="product-image carousel-cell" alt="" onerror="this.style.display='none';">
+                            <img src="https://cdn.chec.io/merchants/27017/assets/ZgLwrhtlAIunRPqS|saia5.webp"
+                                class="product-image carousel-cell" alt="" onerror="this.style.display='none';">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-name">Saia Xadrez Com Fenda <span class="inline-price">R$1.00</span></span>
+                        <span class="product-description">
+                            <p></p>
+                            <h2>Descrição</h2>
+                            <p>Saia Feminina Tecido: Jacquard Composição do tecido: 58% algodão e 42% poliéster
+                                Tamanhos: PMG P-COMP.42CM LARG.44CM M- COMP.44CM LARG.46CM G- COMP.45CM LARG.48CM As
+                                medidas podem variar de 2 cm pra + ou para - Manequim P- 36 ao 38 M- 40 ao 42 G-44 -
+                                MALHA DE QUALIDADE - VESTE MUITO BEM - QUALIDADE GARANTIDA</p>
+                        </span>
+                        <span class="product-price">R$1.00</span>
+
+
+                        <a href="javascript:hideProductDetailsModal()" class="close">Sair</a>
+                        <a href="javascript:Spaces.AddToCart('prod_VPvL5z3jEMlAQk');" class="buy-now"><i
+                                class="fa fa-lock" aria-hidden="true"></i> <b>Adiciona ao Carrinho</b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        <div class="product" data-product-name="Lindo Vestido manga longa Valoriza o Corpo"
+            data-product-id="prod_ZM8X5nPqV6wpv4">
+            <div class="product-details-overlay">
+                <div class="product-contents">
+                    <div class="images ignore">
+                        <div class="hover-overlay">
+                            <a href="javascript:showProductDetailsModal('prod_ZM8X5nPqV6wpv4')"
+                                class="learn-more">Ver Descrição</a>
+                            <a href="javascript:Spaces.AddToCart('prod_ZM8X5nPqV6wpv4');" class="buy-now"><i
+                                    class="fa fa-lock" aria-hidden="true"></i> <b>Adiciona ao Carrinho</b></a>
+                        </div>
+
+                        <img src="https://cdn.chec.io/merchants/27017/assets/9tYfo5FQVftMx1e9|vestidos1.webp"
+                            class="product-image--main" onerror="this.style.display='none';">
+                        <div class="product-images">
+                            <img src="https://cdn.chec.io/merchants/27017/assets/9tYfo5FQVftMx1e9|vestidos1.webp"
+                                class="product-image carousel-cell" alt="" onerror="this.style.display='none';">
+                            <img src="https://cdn.chec.io/merchants/27017/assets/8tzVZVj2wdr2a3KA|vestidos3.webp"
+                                class="product-image carousel-cell" alt="" onerror="this.style.display='none';">
+                            <img src="https://cdn.chec.io/merchants/27017/assets/0VoO1SY7iEiUE75J|vestidos2.webp"
+                                class="product-image carousel-cell" alt="" onerror="this.style.display='none';">
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <span class="product-name">Lindo Vestido manga longa Valoriza o Corpo <span
+                                class="inline-price">R$1.00</span></span>
+                        <span class="product-description">
+                            <h2>Descrição</h2>
+                            <p>VEstido Canelado Curto Sem Bojo ** <strong>Foto original do produto</strong> * - Tamanho:
+                                único modelagem veste do 36 ao 42 - TAMANHO ÚNICO Veste P e M (do 36 ao 42) Busto:
+                                80-102 cm Cintura: 58-79 cm Quadril: 88 -109 cm - MATERIAL Tecido: Malha Canelada
+                                Composição: 96% algodão e 4% elastano Descrição: Tecido flexível e macio. Bastante
+                                resistente e com ótimo caimento. Comprimento: 85cm</p>
+                        </span>
+                        <span class="product-price">R$1.00</span>
+
+
+                        <a href="javascript:hideProductDetailsModal()" class="close">Sair</a>
+                        <a href="javascript:Spaces.AddToCart('prod_ZM8X5nPqV6wpv4');" class="buy-now"><i
+                                class="fa fa-lock" aria-hidden="true"></i> <b>Adiciona ao Carrinho</b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+    </section>
+
+    <footer class="backgroud-nav">
+        <div id="contact-area">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h5 class="main-title">Entre em contato conosco</h5>
+              </div>
+              <div class="col-md-4 contact-box">
+                <i class="fa fa-phone"></i>
+                <p class="contact-title">Ligue <span>(13)99999-3333 <b>ou</b> (13)99999-2222 </span> </p>
+                <p class="contact-title">Horários: <span>8:00 - 18:00</span> </p>
+              </div>
+              <div class="col-md-4 contact-box">
+                <i class="fa fa-whatsapp"></i>
+                <p class="contact-title">Whatsapp <span> (13)99999-3333 <b>ou</b> (11)99999-2222 </span> </p>
+              </div>
+              <div class="col-md-4 contact-box">
+                <i class="fa fa-envelope"></i>
+                <p class="contact-title">Envie um e-mail <span> kalinoippc@hotmail.com <b>ou</b> kalinoippc@gmail.com
+                  </span> </p>
+              </div>
+              <div class="col-md-12" id="msg-box">
+                <h5 class="main-title">Metodos de pagamaneto</h5>
+              </div>
+              <div class="col-md-12 contact-box">
+                <img src="/images/visa.png" alt="" srcset="" class="float-left img2">
+                <img src="/images/master.png" alt="" srcset="" class="float-left img2">
+                <img src="/images/elo.svg" alt="" srcset="" class="float-left img2">
+                <img src="/images/diners.svg" alt="" srcset="" class="float-left img2">
+                <img src="/images/amex.svg" alt="" srcset="" class="float-left img2">
+                <img src="/images/pypal.png" alt="" srcset="" class="float-left imgPy">
+                <img src="/images/selo.png" alt="" srcset="" class="float-left img2">
+                <img src="/images/selo2.gif" alt="" srcset="" class="float-left img2">
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="https://use.fontawesome.com/be0b7d7a6c.js"></script>
+
+    <script>
+        var CommercejsSpace = new Commerce("chec_eyJpdiI6IkJOWEwyWlorZ1N2Uk54NVpDOHBYQkE9PSIsInZhbHVlIjoiR1dDcllPM29hRk1iQm5CTVwvdHhQMndBNENDelhuM1B4ZjRKK0l4VHhwUDR4TDQ5eWZrSW5TbVg1RkR2c2xhUitKRTBSc01qaklxWlB4OGFlSWQxdmxJV2RIdzRMRlAyT0RVZ1MwQnNTU3MzaDdsZ05vUHFLNTRTa0xpTE5OXC9OT1VQbmdtWUFxc3V4ZEZVVmtkUTYxcnc9PSIsIm1hYyI6ImE0N2VlOTQ3NTM0OWYxNzJkMDdiMDE5ZTA2ODMzYjEyMjM2MTdiYzc3NDM2MTU5MjM5MWI2OGMwZDg0YjIyNDMifQ==", false, {
+            url: 'https://api.chec.io',
+            axiosConfig: {
+                headers: {
+                    'Chec-Version': '2020-08-26',
+                },
+            },
+        });
+        CommercejsSpace.cart.retrieve().then(function (data) {
+            Spaces.cartUpdate(data);
+        });
+
+        $(document).ready(function () {
+            $('.product-details-overlay').on('click', function (el) {
+                if ($(el.target).hasClass('product-details-overlay')) {
+                    hideProductDetailsModal();
+                }
+            });
+
+            $('#search').hideseek({
+                list: '.hideseek-data',
+                nodata: 'No products found',
+                attribute: 'text',
+                highlight: false,
+                ignore: 'ignore',
+                navigation: false,
+                ignore_accents: false,
+                hidden_mode: false
+            });
+        });
+
+        $('.hover-overlay').on("touchstart", function (e) {
+            "use strict"; //satisfy the code inspectors
+            var link = $(this); //preselect the link
+            if (link.hasClass('hover')) {
+                return true;
+            } else {
+                link.addClass("hover");
+                $('.hover-overlay').not(this).removeClass("hover");
+                e.preventDefault();
+                return false; //extra, and to make sure the function has consistent return points
+            }
+        });
+
+        function cartShow() {
+            $('#shopping-cart #cart-active-overlay ').show();
+            $('#shopping-cart #cart-overview').removeClass('inactive');
+        }
+
+        function cartHide() {
+            $('#shopping-cart #cart-overview').addClass('inactive');
+            $('#shopping-cart #cart-active-overlay ').hide();
+        }
+
+        function showProductDetailsModal(id) {
+            $('.product[data-product-id=' + id + ']').addClass('details-modal');
+            $('body').addClass('no-scroll');
+
+            $('.product[data-product-id=' + id + '] .product-image--main').hide();
+            $('.product[data-product-id=' + id + '] .product-images')
+                .flickity({
+                    cellAlign: 'center',
+                    adaptiveHeight: true,
+                    wrapAround: true,
+                });
+        }
+
+        function hideProductDetailsModal() {
+            $('.product').removeClass('details-modal');
+            $('body').removeClass('no-scroll');
+            $('.product-image--main').show();
+        }
+
+    </script>
+
+</body>
+
+</html>

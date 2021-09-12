@@ -1,0 +1,119 @@
+.body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: darkslategray;
+}
+.texto-1{
+  font-size: 10px;
+}
+
+.a:link 
+{ 
+ text-decoration:none; 
+} 
+.imgD{
+  width: 100%;
+}
+.autura{
+  width: 100%;
+  max-height: 100px;
+}
+.mg-auto{
+  display: flex;
+  margin: auto;
+}
+.bg-ps{
+  background-image: url('https://http2.mlstatic.com/optimize/o:f_webp/resources/deals/exhibitors_resources/mlb-home-desktop-slider-picture-69943690-136c-4e9b-ae5d-8058562f2416.jpg');
+  height: 300px;
+  width: 98%;
+  margin: auto;
+}
+.posicao{
+  align-items: center;
+  margin: auto;
+  width: 110px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+li{
+  list-style-type: none;
+}
+.img1{
+  max-width: 100px;
+  max-height: 170px;
+  padding: 8px;
+}
+.p{
+  font-size: 9px;
+}
+.radius{
+  border-radius: 3px;
+}
+.div-clear {
+  clear: left;
+}
+.div-inline {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+  background-color: #ccc;
+}
+.zoom {
+	overflow: hidden;
+}
+
+.zoom div1 {
+  height: 30%;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.zoom:hover div {
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.text-item {
+	position: absolute;
+	left: 5%;
+	right: 5%;
+	bottom: 20px;
+	z-index: 10;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #ffffff;
+	text-align: center;
+	font-weight: 700;
+	text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+.container-2{
+  width: 90%;
+  padding: 8px;
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+}
+.box{
+  width: 180px;
+  height: 200px;
+  margin: 0px 10px;
+  transition: 1s;
+  margin: 1em;
+  box-shadow: 0 0 2px rgb(211, 208, 208);
+  color: #080808;
+  box-shadow: 0 0 2px rgb(170, 163, 163);
+}
+.box:hover{
+  transform:scale(1.1)
+}
+.div-float{
+  background-color: white;
+  float: left;
+  width: 190px;
+  height: 270px;
+  margin: 7px;
+  border-radius: 6px;
+}

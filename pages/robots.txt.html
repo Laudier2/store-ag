@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no, width=device-width">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> - Spaces by Chec </title>
+    <meta name="description" content="" />
+    <link rel="publisher" href="https://chec.io" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content=" - Spaces by Chec" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://spaces.trychec.com/" />
+    <meta property="og:site_name" content="Chec" />
+    <meta property="og:url" content="https://spaces.chec.io/"/>
+<link rel="canonical" href="https://spaces.chec.io/" />
+    <meta property="fb:app_id" content="417367831681015" />      <meta property="og:image" content="https://chec.io/static/images/holo.large.png" />      <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content=" - Spaces by Chec" />
+    <meta name="twitter:site" content="@trychec" />
+    <meta name="twitter:domain" content="Chec" />      <meta name="twitter:image" content="https://tryrchec.com/static/images/holo.large.png" />      <meta name="twitter:creator" content="@trychec" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,300italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="../css/checkout.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/flickity/flickity.min.css">
+    <script src="js/vendor.js%3F1474665817" type="text/javascript"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+    <script type="text/javascript" src="https://cdn.chec.io/v2/commerce.js"></script>
+    <script type="text/javascript" src="js/spaces.js" defer></script>
+    <script type="text/javascript" src="js/jquery.hideseek.min.js" defer></script>
+    <script src="assets/flickity/flickity.pkgd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.7.2/jquery.serializejson.min.js"></script>
+    <script src="https://cdn.rawgit.com/mgalante/jquery.redirect/master/jquery.redirect.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.4.1/jquery.payment.min.js"></script>
+    <script src="https://www.paypalobjects.com/js/external/apdg.js"></script>
+    <script>
+
+  </script>
+
+</head>
+
+<body class="spaces ">
+    <div id="chec-basket" class="animated" onclick="cartShow()">
+        <span class="cart-icon">
+        <img src="images/cart.white.png" width="23">
+        </span>
+        <span class="items" data-chec="cart-items">0 Items</span>
+        <span class="subtotal" data-chec="cart-subtotal">$0.00</span>
+        <a class="view-cart mobile-only"href="javascript:cartShow()">View Cart</a>
+    </div>
+    <section id="shopping-cart">
+        <aside id="cart-overview" class="inactive">
+            <hr class="hologram-bar open">
+            <div class="shopping-cart-wrap">
+            <a class="hide-cart mobile-only" href="javascript:cartHide()">Close Cart</a>
+                <h3 class="shopping-cart-title"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</h3>
+                <ul class="line-items">
+                    <li class="empty">Cart is empty!</li>
+                </ul>
+                <div class="subtotal">
+                    <h4>Subtotal</h4><span>-</span></div>
+                <div class="closing">
+                    <a class="go-to-checkout" href="javascript:Spaces.goToCheckout()"><i class="fa fa-lock"></i> <b>Confirma</b></a>
+                    <small class="secure">All transactions are safe & secured by 2048 bit SSL encryption.</small>
+                </div>
+            </div>
+            <div id="spaces-inline-checkout">
+            </div>
+            <hr class="hologram-bar close">
+        </aside>
+        <div id="cart-active-overlay" onclick="cartHide()"></div>
+    </section>
+    <header id="cover"  class="no-cover" >
+        <h1 id="merchant-name"></h1>
+        <span id="merchant-bio"></span>
+        <!--<div id="cover-overlay"></div>!-->
+    </header>
+    <section id="products" data-display-type="grid">
+        <span class="notice-empty-space">This space is empty</span>
+    </section>
+    <footer>
+        <div class="powered-by-chec">
+            <a href="https://chec.io" target="blank" alt="Chec - Sell anything, anywhere.">
+                <img src="images.beta/powered.by.dark.png" class="light" width="182">
+            </a>
+        </div>
+        <div class="copyright">
+            &copy; Copyright 2021  & Chec (Chec Platform, Inc).
+            <br>All rights reserved.
+        </div>
+    </footer>
+    <script>
+        var CommercejsSpace = new Commerce("chec_eyJpdiI6InNoK0pwNkJQSVplWWFFMmJzOVh0M2c9PSIsInZhbHVlIjoiN09XdlNBZmxneEdvSE5JNWh0U0NhbWVuR2JhaHVnOGJVUEZCMXFxdCtYUTM2N3BCTkJqXC8yS0dycFU1RzZEUFwvTTFyR0F1MVAwXC9GaUQ1OTZEeHhBOEE5cmtMMCtwWG8rc0NXa2t0ZWpNVEsxOG94SCthck1SVG1HaUJjTTNvTHhiUVpBdE91SGE1ZFwvS3ZcL1RkeW81ZVE9PSIsIm1hYyI6IjQyM2I3Zjc0ZDQxNzY0NDEyYTgxZGUxMmNmMGFmYzZhOWM5ODEwMzcwODI3NWQyMGRiMWFhNjRkNzdlODA1Y2YifQ==", false, {
+            url: 'https://api.chec.io',
+            axiosConfig: {
+                headers: {
+                    'Chec-Version': '2020-08-26',
+                },
+            },
+        });
+        CommercejsSpace.cart.retrieve().then(function(data){
+            Spaces.cartUpdate(data);
+        });
+
+        $(document).ready(function() {
+            $('.product-details-overlay').on('click', function(el){
+                if ($(el.target).hasClass('product-details-overlay')){
+                    hideProductDetailsModal();
+                }
+            });
+
+            $('#search').hideseek({
+                list: '.hideseek-data',
+                nodata: 'No products found',
+                attribute: 'text',
+                highlight: false,
+                ignore: 'ignore',
+                navigation: false,
+                ignore_accents: false,
+                hidden_mode: false
+            });
+        });
+
+        $('.hover-overlay').on("touchstart", function(e) {
+            "use strict"; //satisfy the code inspectors
+            var link = $(this); //preselect the link
+            if (link.hasClass('hover')) {
+                return true;
+            } else {
+                link.addClass("hover");
+                $('.hover-overlay').not(this).removeClass("hover");
+                e.preventDefault();
+                return false; //extra, and to make sure the function has consistent return points
+            }
+        });
+
+        function cartShow() {
+            $('#shopping-cart #cart-active-overlay ').show();
+            $('#shopping-cart #cart-overview').removeClass('inactive');
+        }
+
+        function cartHide() {
+            $('#shopping-cart #cart-overview').addClass('inactive');
+            $('#shopping-cart #cart-active-overlay ').hide();
+        }
+
+        function showProductDetailsModal(id) {
+            $('.product[data-product-id=' + id + ']').addClass('details-modal');
+            $('body').addClass('no-scroll');
+
+            $('.product[data-product-id=' + id + '] .product-image--main').hide();
+            $('.product[data-product-id=' + id + '] .product-images')
+                .flickity({
+                    cellAlign: 'center',
+                    adaptiveHeight: true,
+                    wrapAround: true,
+                });
+          }
+
+        function hideProductDetailsModal() {
+            $('.product').removeClass('details-modal');
+            $('body').removeClass('no-scroll');
+            $('.product-image--main').show();
+        }
+
+    </script>
+
+</body>
+
+</html>
