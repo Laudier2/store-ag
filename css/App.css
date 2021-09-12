@@ -370,13 +370,15 @@ hr{
 
 .img2{
   display: block;
-  width: 6%;
+  width: 40px;
+  height: 25px;
   margin: 1%;
 }
 
 .imgPy{
   display: block;
-  width: 7%;
+  width: 40px;
+  height: 25px;
   margin: 1%;
 }
 
@@ -575,6 +577,9 @@ hr{
   margin-bottom: 10px;
   border-bottom: 1px solid #69d8e9;
   width: 100%;
+  display: flex;
+  align-items: center;
+  margin: auto;
 }
 
 .contact-box i {
